@@ -1,0 +1,28 @@
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+nav {
+    margin: 1rem 0;
+    text-align: center;
+}
+nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #4CAF50;
+}
+main {
+    padding: 1rem;
+    text-align: center;
+}
+footer {
+    background-color: #5e5a5a;
+    color: #fcf5f5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}

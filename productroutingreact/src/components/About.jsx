@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 //Get Function
 const About = () => {
   const [product, setproduct] = useState([])
@@ -36,13 +37,14 @@ const About = () => {
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "5px", textAlign: "center" }}>
         {product.map((el) => (
           <div key={el.id} style={{ boxShadow: " rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset" }}>
+            <Link style={{textDecoration:"none",color:"black"}} to={`/descriptionpage/${el.id}`}>
             <img src={el.image} alt="" height={200} width={200} />
             <h3>{el.title}</h3>
             <h3>{el.price}</h3>
-            <p>{el.description}</p>
-            <button>Edit</button>
+            <p>{el.description}</p>           
+            </Link>
+            <button><Link to={`/editproduct/${el.id}`}>Edit</Link></button>
             <button onClick={() => deletePro(el.id)}>Delete</button>
-
           </div>
         ))}
 
