@@ -1,0 +1,94 @@
+.home {
+    background-image: url("https://static.dezeen.com/uploads/2021/08/Grovemade_dezeen_2364_col_0.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 480px;
+    filter: blur(-100px);
+}
+
+.hometext {
+    text-align: right;
+    position: relative;
+    width: 100%;
+    top: 20%;
+    right: 5%;
+}
+
+.swiper {
+    width: 90%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.banner {
+    background-image: url("https://cdn.blessthisstuff.com/imagens/stuff/grovemade-black-collection.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 400px;
+}
+
+.video {
+    height: 450px;
+}
+.dropdown:hover .submenu {
+ display: flex;
+ justify-content: space-between;
+}
+.submenu ul li a {
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+}
+.proimg {
+    background-image: url('https://grovemade.imgix.net/https%3A%2F%2Fsiteleaf.grovemade.com%2Fuploads%2FcoverB-desk-shelf-F3.jpg?auto=format&ixlib=python-1.1.2&w=700&s=0a677ea28f0a9223f612515ee9588f19');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.proimg li a {
+    color: grey;
+    text-decoration: none;
+}
+.proimg .line {
+    position: absolute;
+    bottom: 1px;
+    left: 4%;
+    
+}
+.exploreimg {
+    background-image:linear-gradient(rgba(170, 168, 168, 0.5),rgba(102, 101, 101, 0.5)) ,url('https://png.pngtree.com/background/20240413/original/pngtree-vacant-wooden-shelf-and-bookcase-rendered-in-3d-picture-image_8468820.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.dropdown-content {
+    display: none;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ .dropdown-content {
+    display: block;
+  }
+  .card-img-top {
+    cursor: pointer;
+  }
