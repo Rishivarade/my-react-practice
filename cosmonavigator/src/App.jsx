@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import Allroutes from './Allroutes'
 import Navbar from './components/Navbar'
+import { themecontext } from './Context/ThemeContext';
+import { auth } from './Service/Firebase';
 function App() {
+  const { theme } = useContext(themecontext)
   return (
     <>
-      <Navbar />
-      <Allroutes />
+     
+     <div className="div" style={{ backgroundColor: theme == "light" ? "white" : "black", color: theme == "light" ? "black" : "white"}}>
+     <Navbar />
+     <Allroutes />
+     </div>
+      
+     
     </>
   )
 }

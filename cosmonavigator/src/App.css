@@ -8,7 +8,6 @@
 }
 
 .hometext {
-    text-align: right;
     position: relative;
     width: 100%;
     top: 20%;
@@ -37,25 +36,28 @@
 }
 
 .banner {
-    background-image: url("https://cdn.blessthisstuff.com/imagens/stuff/grovemade-black-collection.jpeg");
+    background-image: url("https://thegadgetflow.com/wp-content/uploads/2024/03/Grovemade-Black-Collection-01-1200x899.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 400px;
+    height: 500px;
 }
 
 .video {
     height: 450px;
 }
+
 .dropdown:hover .submenu {
- display: flex;
- justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
+
 .submenu ul li a {
     text-decoration: none;
     color: grey;
     font-size: 14px;
 }
+
 .proimg {
     background-image: url('https://grovemade.imgix.net/https%3A%2F%2Fsiteleaf.grovemade.com%2Fuploads%2FcoverB-desk-shelf-F3.jpg?auto=format&ixlib=python-1.1.2&w=700&s=0a677ea28f0a9223f612515ee9588f19');
     background-position: center;
@@ -63,32 +65,171 @@
     background-size: cover;
     height: 500px;
 }
+
 .proimg li a {
-    color: grey;
+    color: rgb(65, 64, 64);
     text-decoration: none;
 }
+
+.proimg li a:hover {
+    color: grey;
+    border-bottom: 1px solid;
+}
+
 .proimg .line {
     position: absolute;
     bottom: 1px;
     left: 4%;
-    
+
 }
+
 .exploreimg {
-    background-image:linear-gradient(rgba(170, 168, 168, 0.5),rgba(102, 101, 101, 0.5)) ,url('https://png.pngtree.com/background/20240413/original/pngtree-vacant-wooden-shelf-and-bookcase-rendered-in-3d-picture-image_8468820.jpg');
+    background-image: linear-gradient(rgba(170, 168, 168, 0.5), rgba(102, 101, 101, 0.5)), url('https://png.pngtree.com/background/20240413/original/pngtree-vacant-wooden-shelf-and-bookcase-rendered-in-3d-picture-image_8468820.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 500px;
 }
+
 .dropdown-content {
     display: none;
-  }
-  input[type="checkbox"] {
+}
+
+input[type="checkbox"] {
     display: none;
-  }
-  input[type="checkbox"]:checked ~ .dropdown-content {
+}
+
+input[type="checkbox"]:checked~.dropdown-content {
     display: block;
-  }
-  .card-img-top {
+}
+
+.card-img-top {
     cursor: pointer;
-  }
+}
+
+.scale img:hover {
+    transform: scale(0.9);
+    transition: 0.3s all ease-in-out;
+}
+
+.scale img {
+    height: 320px;
+    width: 320px;
+}
+
+.cart {
+    margin-top: 6%;
+}
+
+.onepro {
+    display: grid;
+}
+
+.log {
+    margin: auto;
+    margin-top: 7%;
+}
+
+@media (max-width: 576px) {
+    .scale img {
+        height: 500px;
+        width: 500px;
+    }
+
+    .onepro {
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .twopro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .threepro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .fourpro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .submenu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .scale img {
+        height: 320px;
+        width: 320px;
+    }
+
+    .proimg .line {
+        position: absolute;
+
+    }
+
+    .onepro {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .twopro {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .threepro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .fourpro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .submenu {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .onepro {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .twopro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .threepro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .fourpro {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .dropdown:hover .submenu {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .submenu ul li a {
+        text-decoration: none;
+        color: grey;
+        font-size: 14px;
+    }
+
+}

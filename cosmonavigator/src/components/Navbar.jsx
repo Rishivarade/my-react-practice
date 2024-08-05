@@ -1,80 +1,97 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { themecontext } from '../Context/ThemeContext';
+import { IoPartlySunny } from 'react-icons/io5';
+import { FaMoon } from 'react-icons/fa';
+import { FaCartShopping } from 'react-icons/fa6';
+import { auth } from '../Service/Firebase';
+import { signOut } from 'firebase/auth';
+
 const Navbar = () => {
+    const {theme,themeUpdaterfunction } = useContext(themecontext)
+    const handlelogout = () => {
+        signOut(auth)
+            .then(() => {
+                alert("logout..")
+                console.log(res)
+            })
+            .catch((err) => { console.log(err) });
+    }
     return (
-        <div id='top' className='fixed-top' style={{ display: "flex", justifyContent: "space-between", backgroundColor: "white", padding: "25px", fontWeight: "bold", fontSize: "14px" }}>
-            <div className="div  col-2 d-flex justify-content-around">
-                <Link className='dropdown' style={{ color: "black", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/product'}>SHOP
+        <>
+        <div id='top' className='fixed-top  ' style={{ display: "flex", justifyContent: "space-between", backgroundColor: theme == "light" ? "white" : "black", color: theme == "light" ? "black" : "white", padding: "25px", fontWeight: "bold", fontSize: "14px" }}>
+            <div className="div col-2 d-flex justify-content-start">
+                <Link className='dropdown pe-3' style={{  color: theme == "light" ? "black" : "white", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/product'}>SHOP
                     <div className="dropdown-menu submenu p-4" >
                         <ul style={{ listStyle: "none" }}><h4>Shop</h4>
-                            <li><a href="a">BlackCollection</a></li>
-                            <li><a href="b">WalnutCollection</a></li>
-                            <li><a href="c">WhiteOa Collection</a></li>
-                            <li><a href="d">MapleCollection</a></li>
-                            <li><a href="e">ShopAll</a></li>
+                            <li>BlackCollection</li>
+                            <li>WalnutCollection</li>
+                            <li>WhiteOa Collection</li>
+                            <li>MapleCollection</li>
+                            <li>ShopAll</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4>Mouse/Desk Pads</h4>
-                            <li><a href="f">Desk Pads</a></li>
-                            <li><a href="g">Mouse Pads</a></li>
-                            <li><a href="h">Coasters</a></li>
-                            <li><a href="i">ViewAll</a></li>
+                            <li>Desk Pads</li>
+                            <li>Mouse Pads</li>
+                            <li>Coasters</li>
+                            <li>ViewAll</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4> Stands</h4>
-                            <li><a href="k">DeskShelves</a></li>
-                            <li><a href="l">MonitorStands</a></li>
-                            <li><a href="m">LaptopStands</a></li>
-                            <li><a href="n">HeadphoneStands</a></li>
-                            <li><a href="o">iPhoneDocks</a></li>
-                            <li><a href="p">iPadStands</a></li>
-                            <li><a href="q">ViewAll</a></li>
+                            <li>DeskShelves</li>
+                            <li>MonitorStands</li>
+                            <li>LaptopStands</li>
+                            <li>HeadphoneStands</li>
+                            <li>iPhoneDocks</li>
+                            <li>iPadStands</li>
+                            <li>ViewAll</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4>Tools</h4>
-                            <li><a href="r">Pens</a></li>
-                            <li><a href="s">Notepads</a></li>
-                            <li><a href="t">Note-Taking-Kit</a></li>
-                            <li><a href="u">Trays</a></li>
-                            <li><a href="v">PenCups&Planters</a></li>
-                            <li><a href="w">View-All</a></li>
+                            <li>Pens</li>
+                            <li>Notepads</li>
+                            <li>Note-Taking-Kit</li>
+                            <li>Trays</li>
+                            <li>PenCups&Planters</li>
+                            <li>View-All</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4> Keyboard</h4>
-                            <li><a href="x">AppleKeyboardTray</a></li>
-                            <li><a href="y">MX-KeysKeyboardTray</a></li>
-                            <li><a href="z">AppleTrackpadTray</a></li>
-                            <li><a href="aa">WristRests</a></li>
-                            <li><a href="bb">ViewAll</a></li>
+                            <li>AppleKeyboardTray</li>
+                            <li>MX-KeysKeyboardTray</li>
+                            <li>AppleTrackpadTray</li>
+                            <li>WristRests</li>
+                            <li>ViewAll</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4> Furniture</h4>
-                            <li><a href="cc">Desk</a></li>
-                            <li><a href="dd">Catch-All</a></li>
-                            <li><a href="ee">WallShelves</a></li>
-                            <li><a href="ff">Lighting</a></li>
-                            <li><a href="gg">ViewAll</a></li>
+                            <li>Desk</li>
+                            <li>Catch-All</li>
+                            <li>WallShelves</li>
+                            <li>Lightin</li>
+                            <li>ViewAll</li>
                         </ul>
                     </div>
 
                 </Link>
-                <Link className='dropdown' style={{ color: "black", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/explore'}>EXPLORE
+                <Link className='dropdown' style={{ color: theme == "light" ? "black" : "white", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/explore'}>EXPLORE
                     <div className="dropdown-menu submenu p-4" >
                         <ul style={{ listStyle: "none" }}><h4>About</h4>
-                            <li><a href="hh">OurStory</a></li>
-                            <li><a href="ii">Origins</a></li>
-                            <li><a href="kk">OurHome</a></li>
-                            <li><a href="ll">Visit Us</a></li>
+                            <li>OurStory</li>
+                            <li>Origins</li>
+                            <li>OurHome</li>
+                            <li>Visit Us</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4>Journal</h4>
-                            <li><a href="mm">CustomerStories</a></li>
-                            <li><a href="nn">DesignStories</a></li>
-                            <li><a href="pp">ProductHighlights</a></li>
-                            <li><a href="oo">Behind the Scenes</a></li>
-                            <li><a href="qq">MaterialFocus</a></li>
-                            <li><a href="rr">ViewAll</a></li>
+                            <li>CustomerStories</li>
+                            <li>DesignStories</li>
+                            <li>ProductHighlights</li>
+                            <li>Behind the Scenes</li>
+                            <li>MaterialFocus</li>
+                            <li>ViewAll</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}><h4>Connect</h4>
-                            <li><a href="ss">Support</a></li>
-                            <li><a href="tt">Instagram</a></li>
-                            <li><a href="uu">Facebook</a></li>
-                            <li><a href="vv">Pinterest</a></li>
-                            <li><a href="ww">LinkedIn</a></li>
+                            <li>Support</li>
+                            <li>Instagram</li>
+                            <li>Facebook</li>
+                            <li>Pinterest</li>
+                            <li>LinkedIn</li>
                         </ul>
                         <ul style={{ listStyle: "none" }}>
                             <li className='text-center'>
@@ -84,8 +101,16 @@ const Navbar = () => {
                     </div>
                 </Link>
             </div>
+            <div className="col-2 text-end ">
+            <a style={{ border: "2px solid black", borderRadius: "25px", padding: "5px 10px 10px 10px", 
+        backgroundColor: theme == "light" ? "black" : "yellow", 
+        color: theme == "light" ? "white" : "black" }} 
+        onClick={() => themeUpdaterfunction("dark")}>
+          {theme == "light" ? <FaMoon /> : <IoPartlySunny />}
+      </a>
+            </div>
             <div className="div col-2 text-center">
-                <Link style={{ color: "black" }} to={'/'}><svg className="svg-logo" version="1.1" alt="Grovemade Logo - at top of page - click to return to homepage" baseProfile="tiny" id="Layer_1" x="0px" y="0px" viewBox="0 0 136.9 11.5">
+                <Link className='' style={{ color: theme == "light" ? "black" : "white"}} to={'/'}><svg className="svg-logo" version="1.1" alt="Grovemade Logo - at top of page - click to return to homepage" baseProfile="tiny" id="Layer_1" x="0px" y="0px" viewBox="0 0 136.9 11.5">
                     <g>
                         <path fill="#272524" d="M23.9,2c0.3-0.3,0.7-0.5,1.1-0.5h0.2c0.4,0,0.8,0.1,1.1,0.3c0.3,0.2,0.5,0.5,0.5,0.8c0,0.3,0.1,0.4,0.3,0.5
 			c0.2,0.1,0.3,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2c0.2-0.1,0.2-0.3,0.2-0.6V2.6c0-0.4-0.1-0.7-0.3-1c-0.2-0.3-0.4-0.6-0.7-0.8
@@ -140,10 +165,19 @@ const Navbar = () => {
                     </g>
                 </svg></Link>
             </div>
-            <div className="div col-2 text-center">
-                <Link style={{ color: "black", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/cart'}>MY CART</Link>
+            
+            <div className="col-2  d-flex justify-content-around">
+                <Link to={'/login'}>
+                <button  style={{backgroundColor: theme == "light" ? "black" : "white",color: theme == "light" ? "white" : "black",border:"0px",textDecoration:"none"}} >LOG IN</button>
+                </Link>
+                <button style={{backgroundColor: theme == "light" ? "black" : "white",color: theme == "light" ? "white" : "black",border:"0px"}} onClick={handlelogout}>LOG OUT</button>
+            </div>
+            <div className="div col-2 text-center ">
+                <Link style={{  color: theme == "light" ? "black" : "white", textDecoration: "none", fontFamily: "din-2014,helvetica,sans-serif" }} to={'/cart'}>MY CART <FaCartShopping /></Link>
             </div>
         </div>
+        </>
+        
     )
 }
 

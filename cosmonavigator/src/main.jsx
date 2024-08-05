@@ -4,9 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ThemeContexProviderFunction } from './Context/ThemeContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <ThemeContexProviderFunction>
+     <BrowserRouter>
     <App />
-  </BrowserRouter>,
+  </BrowserRouter>
+  </ThemeContexProviderFunction>
+ ,
 )
