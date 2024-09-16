@@ -1,18 +1,21 @@
+import { Link } from "react-router-dom";
 
 
 export default function ProductCard({
     brand,
+    id,
     category,
     price,
-    id
 })
 {
     return (
         <tr data-testid="item" key={id}>
             <td>{id}</td>
             <td data-testid="brand" >
-                <img src={brand.img}  />  
-//     add Link here and keep the data-testid="brand" on Link tag      
+                <Link to={`/products/${id}`}>
+                {brand}  
+                </Link>
+                
             </td>
             <td data-testid="category">
                 {category}

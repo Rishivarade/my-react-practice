@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import ProductCard from "./ProductCard"
 
 function ProductsTable(){
     const [data,setdata]=useState([])
@@ -25,18 +26,24 @@ function ProductsTable(){
                 </thead>
                 <tbody>
                     {/* map through the data */}
-                    {data.map(({id,price,category,brand}) => {
+                    {data.map((item) => {
                         return (
+                            <ProductCard key={item.id} 
+                            id={item.id}
+                            brand={item.brand}
+                            category={item.category}
+                            price={item.price}
+                            />
                            
-                            <tr key={id}>
-                                <td>{id}</td>
-                                <td><Link style={{
-                                    textDecoration:"none",
-                                    color:"black"
-                                }} to={`/products/${id}`}>{brand}</Link></td>
-                                <td>{category}</td>
-                                <td>{price}</td>
-                            </tr>
+                            // <tr key={id}>
+                            //     <td>{id}</td>
+                            //     <td><Link style={{
+                            //         textDecoration:"none",
+                            //         color:"black"
+                            //     }} to={`/products/${id}`}>{brand}</Link></td>
+                            //     <td>{category}</td>
+                            //     <td>{price}</td>
+                            // </tr>
                         )
 
                     })}

@@ -16,7 +16,11 @@ function AllRoutes() {
           <Dashboard />
         </PrivateRoute>
       }></Route>
-      <Route path="/products/:id" element={<SingleProductPage/>}></Route>
+      <Route path="/products/:id" element={
+      
+          <SingleProductPage />
+      
+        }></Route>
     </Routes>
   );
 }
